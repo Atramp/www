@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html><!--manifest="index.appcache"-->
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../resources/js/jquery/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var total = $('img').length;
+            var index = 0;
+            var last = null;
+            var navigator = {
+                canvas: $('#canvas-navigator')[0],
+                ctx: $('#canvas-navigator')[0].getContext('2d'),
+                drawDot: function (centerX, centerY, radius) {
+                    this.ctx.beginPath();
+                    this.ctx.arc(centerX, centerY, radius, 0, Math.PI * 2, true);
+                    this.ctx.closePath();
+                    this.ctx.fill();
+                },
+                init: function () {
+                    this.canvas.width = window.innerHeight;
+                    var middle = this.canvas.clientWidth / 2;
+                    this.ctx.fillStyle = "#333333";
+                    this.ctx.globalAlpha = 0.5;
+                    for (var i = 0; i < total; i++) {
+                        this.drawDot(middle + 10 - total * 10 + i * 20, 5, 3);
+                    }
+                },
+                navigate: function (i) {
+                    this.init();
+                    var middle = this.canvas.clientWidth / 2;
+                    this.ctx.fillStyle = "#ffffff";
+                    this.drawDot(middle + 10 - total * 10 + (i % 4) * 20, 5, 5);
+                }
+            };
+            navigator.init();
+            var scroll = function (id, direction) {
+                var cur = '#pic-' + (id % total + 1);
+                if (!direction || direction == 'left') {
+                    // 上个图滑出效果
+                    if (last)
+                        $(last).css('-webkit-animation', '1s leftScrollOut forwards');
+                    // 当前图滑入效果
+                    $(cur).css('-webkit-animation', '1s leftScrollIn forwards');
+                } else {
+                    // 上个图滑出效果
+                    if (last)
+                        $(last).css('-webkit-animation', '1s rightScrollOut forwards');
+                    // 当前图滑入效果
+                    $(cur).css('-webkit-animation', '1s rightScrollIn forwards');
+                }
+                return cur;
+
+            };
+
+            var startScroll = function (id, d) {
+                // 初始化
+                if (id == -1)
+                    id = total - 1;
+                index = id;
+                last = scroll(index, d);
+                navigator.navigate(index);
+                return setInterval(function () {
+                    var i = ++index;
+                    last = scroll(i);
+                    navigator.navigate(i);
+                }, 3000);
+            };
+
+            var x = startScroll(0);
+
+            var touch_in_progress;
+            var xx;
+            var startX;
+            var getX = function (e) {
+                return ((e.originalEvent || e).changedTouches[0]).clientX;
+            }
+            $('#div').on('touchstart', function (ev) {
+                console.log('touch start');
+                touch_in_progress = true;
+                startX = getX(ev);
+                xx = setTimeout(function () {
+                    touch_in_progress = false;
+                    clearInterval(x);
+                    console.log('Ops....');
+                }, 500);
+                console.log(xx);
+                ev.preventDefault();// 阻止浏览器默认事件，重要
+            }).on('touchend', function (ev) {
+                if (touch_in_progress) {// 单击
+                    touch_in_progress = false;
+                    console.log('touch end clear ' + xx);
+                    clearTimeout(xx);
+                    if ((getX(ev) - startX) < -20) {
+                        clearInterval(x);
+                        x = startScroll(index + 1);
+                    } else if ((getX(ev) - startX) > 20) {
+                        clearInterval(x);
+                        x = startScroll(index - 1, 'right');
+                    }
+                } else {
+                    touch_in_progress = false;
+                    console.log('touch hold end')
+                    x = startScroll(index);
+                }
+                ev.preventDefault();// 阻止浏览器默认事件，重要
+            });
+        })
+        ;
+    </script>
+    <style>
+        @-webkit-keyframes leftScrollIn {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: 0%;
+            }
+        }
+
+        @-webkit-keyframes leftScrollOut {
+            0% {
+                left: 0%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+
+        @-webkit-keyframes rightScrollIn {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 0%;
+            }
+        }
+
+        @-webkit-keyframes rightScrollOut {
+            0% {
+                left: 0%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        img {
+            position: fixed;
+            left: 0%;
+            width: 100%;
+            left: 100%;
+        }
+    </style>
+</head>
+<body style="height: 100%;margin: 0px;">
+<div style="text-align: center;">
+    <div style="width: 100%;" id="div">
+        <img id="pic-1" src="../resources/img/banner1001.png"/>
+        <img id="pic-2" src="../resources/img/banner1002.png"/>
+        <img id="pic-3" src="../client-slide/img/banner1003.png"/>
+        <img id="pic-4" src="../resources/img/banner1004.png"/>
+    </div>
+    <div style="width:100%;z-index:999;position: absolute;bottom: 3px;">
+        <canvas height="10px" id="canvas-navigator">
+
+        </canvas>
+    </div>
+</div>
+</body>
+</html>

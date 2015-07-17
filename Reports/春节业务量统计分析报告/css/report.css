@@ -1,0 +1,37 @@
+body, div {
+    margin: 0;
+    padding: 0;
+}
+
+span{
+    font-size: 16px;
+    color: #000000;
+}
+
+img{
+    width: 100%;
+}
+
+.text{
+    text-align: left;
+    line-height: 200%;
+    padding: 0 5%;
+}
+.cover-icon{
+    display: none;
+}
+.blue {
+    color: #149bdf;
+}
+
+.green {
+    color: #00B050;
+}
+
+.red {
+    color: #C00000;
+}
+
+.vertical-top div{
+    vertical-align: top;
+}

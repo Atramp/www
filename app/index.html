@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8">
+    <script src="/resources/js/jquery/jquery-1.10.2.min.js"></script>
+    <title></title>
+    <style>
+        div {
+            text-align: center;
+        }
+
+        .list {
+            margin: -2vh 0;
+            padding: 5vh 0;
+            background-color: #cccccc;
+        }
+
+        .list div {
+            width: 80vw;
+            height: 10vh;
+            margin: 3vh 10vw;
+            text-align: left;
+            border: 1px #F5F5F5 solid;
+            box-shadow: 1px 1px #999999;
+        }
+
+        .list div a {
+            text-decoration: none;
+        }
+
+        .list div img {
+            height: 8vh;
+            margin: 1vh 5vw;
+        }
+
+        .list div span {
+            width: 50vw;
+            font-size: 4vh;
+            float: right;
+            text-align: center;
+            display: block;
+            height: 10vh;
+            line-height: 10vh;
+        }
+
+        span {
+            color: #ffffff;
+            list-style-type: none;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".list div").click(function () {
+                var item = this;
+                $(this).css("box-shadow", "0 0");
+                setTimeout(function () {
+                    $(item).css("box-shadow", "1px 1px #999999");
+                    location.href = item.getAttribute("LINK");
+                }, 100);
+                return true;
+            })
+        });
+    </script>
+</head>
+<body style="margin: 0;">
+<div>
+    <div style="background-color: #90c31f;height:45vh;">
+        <div style="height:10%;padding:2vh 1vw;width: 20%; background-color: #ffffff;border-radius:0 0 6px 6px;margin-left: 65%;text-align: center;">
+            <img src="img/he.png" style="width: 75%;">
+        </div>
+        <div style="height:15vh;margin-top: 3vh">
+            <span style="font-size: 8vh;letter-spacing: 5px">掌上经分</span><br/>
+            <span style="font-size: 4vh;font-style: normal;">移动客户端下载</span>
+        </div>
+        <div style="height:30vh;">
+            <img src="img/line.png" style="width: 100vw;">
+        </div>
+    </div>
+    <div style="height:55vh;" class="list">
+        <div LINK="http://218.206.191.164:8088/app/MobileBI-V1.2.apk">
+            <img src="img/btn-Android.png">
+            <span>Android下载</span>
+        </div>
+        <div LINK="itms-services:///?action=download-manifest&url=https://mobilebi.oss-cn-beijing.aliyuncs.com/MobileBI.plist">
+            <img src="img/btn-ios.png">
+            <span>iPhone下载</span>
+        </div>
+        <div LINK="itms-services:///?action=download-manifest&url=https://mobilebi.oss-cn-beijing.aliyuncs.com/MobileBI-iPad.plist">
+            <img src="img/btn-ipad.png">
+            <span>iPad下载</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

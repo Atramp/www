@@ -1,0 +1,54 @@
+body,div{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    color: #f3704b;
+    font-size: 3vh;
+}
+
+span {
+    width: 100%;
+    font-size: 2vh;
+}
+
+.cover-icon {
+    width: 100vw;
+    margin-top: -30%;
+    display: none;
+}
+
+.cover-title {
+    font-size: 4vh;
+    display: none;
+    color: #f3704b;
+}
+
+.wider{
+    width: 120%;
+    margin-left: -10%;
+}
+
+.chartDiv {
+    height: 70%;
+}
+
+.textDiv {
+    display: none;
+    padding: 0 5%;
+}
+
+.section div{
+    overflow:hidden;
+}
+
+.section div li{
+    margin-bottom: 5px;
+}
+
+.important {
+    font-size: 2vh;
+    color: #f3704b;
+}

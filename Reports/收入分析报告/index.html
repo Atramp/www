@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html manifest="index.appcache">
+<head>
+    <title>收入分析报告</title>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <link rel="stylesheet" href="/resources/css/fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/report.css">
+    <script src="/resources/js/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/resources/js/jquery/jquery.easing.1.3.min.js"></script>
+    <script src="/resources/js/jquery/fullPage/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.cover-icon').fadeTo(1000, 1);
+            var drawn = "1";
+            $(function () {
+                $('#fullpage').fullpage({
+                    css3: true,
+                    scrollingSpeed: 500,
+                    scrollOverflow: false,
+                    touchSensitivity: 50,
+                    afterLoad: function (anchorLink, index) {
+                        if (index == 7) {
+                            //$("#title-6").css("marginTop","-650vh")
+                            $("#pic-6-0").css("opacity", "0");
+                            $("#pic-6-1").css("clip", "rect(0, 0, 100vh, 0)");
+                            $("#pic-6-1").css("clipRight", "0");
+                            $("#pic-6-2").css("opacity", "0")
+                            $("#pic-6-5").css("top", '100vh');
+                            $("#pic-6-5").css("opacity", '0');
+                            //$("#bottom-6").css("bottom","-50vh");
+                        }
+                        if (drawn.indexOf(index) == -1 || index == 7) {
+                            drawn = drawn.concat(index);
+                            if (index == 2) {
+                                $('#title-1').animate({marginTop: '0'}, 1000, 'swing', function () {
+                                    $('#pic-1-1').animate({opacity: '1'}, 1000, 'swing', function () {
+                                        $('#bottom-1').animate({bottom: '5vh'}, 500, 'swing');
+                                    })
+                                });
+                            } else if (index == 3) {
+                                $('#title-2').animate({marginTop: '0'}, 1000, 'swing', function () {
+                                    $('#pic-2-1').animate({opacity: '1'}, 1000, 'swing', function () {
+                                        $('#bottom-2').animate({bottom: '5vh'}, 500, 'swing');
+                                    })
+                                });
+                            } else if (index == 4) {
+                                $('#title-3').animate({marginTop: '0'}, 1000, 'swing', function () {
+                                    $('#pic-3-1').animate({opacity: '1'}, 1000, 'swing', function () {
+                                        $('#bottom-3').animate({bottom: '5vh'}, 500, 'swing');
+                                    })
+                                });
+                            } else if (index == 5) {
+                                $('#title-4').animate({marginTop: '0'}, 1000, 'swing', function () {
+                                    $('#pic-4-1').animate({opacity: '1'}, 1000, 'swing', function () {
+                                        $('#bottom-4').animate({bottom: '5vh'}, 500, 'swing');
+                                    })
+                                });
+                            } else if (index == 6) {
+                                $('#title-5').animate({marginTop: '0'}, 1000, 'swing', function () {
+                                    $('#pic-5-1').animate({opacity: '1'}, 1000, 'swing', function () {
+                                        $('#bottom-5').animate({bottom: '5vh'}, 500, 'swing');
+                                    })
+                                });
+                            } else if (index == 7) {
+                                $('#title-6').animate({marginTop: '0'}, 1000, 'swing', function () {
+                                    var x_left = ($(document).outerWidth() - $('#pic-6-0').outerWidth()) / 2 + 'px';
+                                    $('.pics').css('left', x_left);
+                                    $('#pic-6-0').animate({opacity: '1'}, 1000, 'swing', function () {
+                                        $('#pic-6-1').animate({clipRight: '100vw'}, {
+                                            duration: 1000,
+                                            step: function (now, tween) {
+                                                $(this).css('clip', 'rect(0, ' + now + 'vw, 100vh, 0px)')
+                                            },
+                                            complete: function () {
+                                                $('#pic-6-5').animate({
+                                                    opacity: '1',
+                                                    top: '0'
+                                                }, 1000, 'swing', function () {
+                                                    $('#pic-6-2').animate({opacity: '1'}, 1000, 'swing', function () {
+                                                        $('#bottom-6').animate({bottom: '5vh'}, 500, 'swing');
+                                                    });
+                                                });
+                                            }
+                                        });
+                                    });
+                                });
+                            }
+                            /**else if (index == 8) {
+                        $('#title-7').animate({marginTop: '0'}, 1000, 'swing', function () {
+                            $('#pic-7-1').animate({opacity: '1'}, 1000, 'swing', function () {
+                                $('#bottom-7').animate({bottom: '5vh'}, 500, 'swing');
+                            })
+                        });
+                    } else if (index == 9) {
+                        $('#title-8').animate({marginTop: '0'}, 1000, 'swing', function () {
+                            var temp = function () {
+                                $('#pic-8-1').animate({opacity: '1'}, 1000, 'swing');
+                            }
+                            setTimeout(temp, 300);
+                        });
+                    } else if (index == 10) {
+                        $('#title-9').animate({marginTop: '0'}, 1000, 'swing', function () {
+                            var temp = function () {
+                                $('#pic-9-1').animate({opacity: '1'}, 1000, 'swing');
+                            }
+                            setTimeout(temp, 300);
+                        });
+                    } else if (index == 11) {
+                        $('#title-10').animate({marginTop: '0'}, 1000, 'swing', function () {
+                            $('#pic-10-1').animate({opacity: '1'}, 1000, 'swing', function () {
+                                $('#bottom-10').animate({bottom: '5vh'}, 500, 'swing');
+                            })
+                        });
+                    }**/
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="fullpage">
+    <div class="section" id="cover" style="background-color: #0E72AF;">
+        <div style="background-color: #F2CA2E;height:50vh;position: absolute;top: 0;border-bottom-right-radius:35vw;border-bottom-left-radius:35vw;">
+            <img class="cover-icon" src="img/cover-01.png" style="width: 100%;">
+        </div>
+    </div>
+    <div id="DIV-SECTION-1" class="section section-x">
+        <div class="topDiv">
+            <div id="title-1" style="margin-top: -150vh">
+                <span class="bold">2014年</span>
+                <span style="margin-top: 1vh">收入6854亿元  同比增长放缓</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-1-CONTENT" class="content">
+            <img id="pic-1-1" src="img/pic-1-1.png" style="height: 55vh;">
+            <!--<div class="x">
+                <div style="margin-left: 0;">
+                    <img src="img/g3-logo.png" style="margin-left: 0;">
+                    <div id="c-b-1" style="background-color: #2D86B3;height: 0vh;">
+                    </div>
+                </div>
+                <div>
+                    <img src="img/g3-logo.png" >
+                    <div id="c-b-2" style="background-color: #5EAC31;height: 0vh;">
+                    </div>
+                </div>
+                <div>
+                    <img src="img/4g.png">
+                    <div id="c-b-3" style="background-color: #E8455D;height: 0vh;">
+                    </div>
+                </div>
+            </div>
+            <script>
+                $('#c-b-1').animate({height: '25vh'}, 1500, 'swing');
+                $('#c-b-2').animate({height: '30vh'}, 1500, 'swing');
+                $('#c-b-3').animate({height: '35vh'}, 1500, 'swing');
+            </script>-->
+        </div>
+        <div id="bottom-1" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-normal">
+                <span>2014年收入增长放缓：全年收入6854亿元，同比增幅5.3%，较前一年下降0.8个百分点。</span>
+            </div>
+        </div>
+    </div>
+    <div id="DIV-SECTION-2" class="section section-x">
+        <div class="topDiv">
+            <div id="title-2" style="margin-top: -250vh;">
+                <span class="bold">语音和数据业务</span>
+                <span style="margin-top: 1vh">收入分别占到54%和41%</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-2-CONTENT" class="content">
+            <img id="pic-2-1" src="img/pic-2-1.png">
+        </div>
+        <div id="bottom-2" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-small">
+                <span>2014年，语音业务收入3705亿元，占到总收入的54%；数据业务收入2796亿元，占到总收入的41%；其他收入353亿元，占到5%。</span>
+            </div>
+        </div>
+    </div>
+    <div id="DIV-SECTION-3" class="section section-x">
+        <div class="topDiv">
+            <div id="title-3" style="margin-top: -350vh;">
+                <span class="bold">语音业务</span>
+                <span style="margin-top: 1vh">收入主要来源于本地通话费</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-3-CONTENT" class="content">
+            <img id="pic-3-1" src="img/pic-3-1.png">
+        </div>
+        <div id="bottom-3" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-normal">
+                <span>语音收入主要来源于本地通话费，占比达45%；长途通话费和漫游通话费仅占到14%和13%。</span>
+            </div>
+        </div>
+    </div>
+    <div id="DIV-SECTION-4" class="section section-x">
+        <div class="topDiv">
+            <div id="title-4" style="margin-top: -450vh;">
+                <span class="bold">数据业务</span>
+                <span style="margin-top: 1vh;">收入主要来源于无线上网收入</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-4-CONTENT" class="content">
+            <img id="pic-4-1" src="img/pic-4-1.png">
+        </div>
+        <div id="bottom-4" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-normal">
+                <span>无线上网收入在数据业务收入中的比重为50%；其次是应用及信息服务收入，比重为33%。</span>
+            </div>
+        </div>
+    </div>
+    <div id="DIV-SECTION-5" class="section section-x">
+        <div class="topDiv">
+            <div id="title-5" style="margin-top: -550vh;">
+                <span style="font-weight: 900;display: inline;">近三年，</span>
+                <span style="display: inline;">语音收入占比保持下降，数据业务占比稳步提升</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-5-CONTENT" class="content">
+            <img id="pic-5-1" src="img/pic-5-1.png">
+        </div>
+        <div id="bottom-5" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-small">
+                <span>近三年来，语音收入占比持续下降，数据业务保持快速发展，在总收入中占比稳步提升。语音和数据收入差距进一步缩小。</span>
+            </div>
+        </div>
+    </div>
+    <div id="DIV-SECTION-6" class="section section-x">
+        <div class="topDiv">
+            <div id="title-6" style="margin-top: -650vh;">
+                <span class="bold">预计2015年9月</span>
+                <span>数据业务收入与语音收入持平</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-6-CONTENT" class="content">
+            <img class="pics" id="pic-6-0" src="img/pic-6/0-01.png" style="z-index: 1;height: 60vh;">
+            <img class="pics" id="pic-6-1" src="img/pic-6/1-01.png"
+                 style="z-index: 2;opacity: 1;clip: rect(0, 0, 100vh, 0);height: 60vh;">
+            <img class="pics" id="pic-6-2" src="img/pic-6/2-01-01.png"
+                 style="z-index: 3;opacity: 0;height: 60vh;">
+            <img class="pics" id="pic-6-5" src="img/pic-6/5-01.png" style="z-index: 6;top: 100vh;height: 60vh;">
+        </div>
+        <div id="bottom-6" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-normal">
+                <span>预计2015年9月，数据业务收入首次与语音收入基本持平，之后将大幅超越。</span>
+            </div>
+        </div>
+    </div>
+    <!--<div id="DIV-SECTION-7" class="section section-x">
+        <div class="topDiv">
+            <div id="title-7" style="margin-top: -750vh;">
+                <span class="bold">预计2018年10月</span>
+                <span>数据业务收入占比将达到60%</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-7-CONTENT" class="content" style="bottom: 15vh;">
+            <img id="pic-7-1" src="img/pic-7-1.png" style="height: auto;width: 90vw;">
+        </div>
+        <div id="bottom-7" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-normal">
+                <span>预计到2018年10月，数据业务在总收入中的比重将进一步提升到60%，成为收入主体构成。</span>
+            </div>
+        </div>
+    </div>
+    <div id="DIV-SECTION-8" class="section section-x">
+        <div class="topDiv">
+            <div id="title-8" style="margin-top: -900vh;">
+                <span class="bold">国际运营商NTT Docomo:</span>
+                <span style="font-size: 3.2vh">早在2011年数据业务收入已超过语音收入</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-8-CONTENT">
+            <img id="pic-8-1" src="img/pic-8-1.png" style="width:auto;height: 70vh;opacity: 0;">
+        </div>
+    </div>
+    <div id="DIV-SECTION-9" class="section section-x">
+        <div class="topDiv">
+            <div id="title-9" style="margin-top: -1000vh;">
+                <span class="bold">国际运营商Vodafone:</span>
+                <span style="font-size: 3.2vh">预计未来三年仍以语音收入为主</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-9-CONTENT">
+            <img id="pic-9-1" src="img/pic-9-1.png" style="width:auto;height: 70vh;opacity: 0;">
+        </div>
+    </div>
+    <div id="DIV-SECTION-10" class="section section-x">
+        <div class="topDiv">
+            <div id="title-10" style="margin-top: -1100vh;">
+                <span class="bold">2015年</span>
+                <span>语音经营向数据经营的转型期</span>
+            </div>
+            <img src="img/top.png">
+        </div>
+        <div id="DIV-SECTION-10-CONTENT" class="content">
+            <img id="pic-10-1" src="img/pic-10-1.png">
+        </div>
+        <div id="bottom-10" class="bottom">
+            <div class="bottom-tip"></div>
+            <div class="bottom-text  bottom-text-small">
+                <span>2015年，中国移动处于语音经营向数据经营的转型期。未来三年，数据业务将继续蓬勃发展，并逐步成为收入最主要来源。</span>
+            </div>
+        </div>
+    </div>-->
+
+    <!--<div class="section vertical-top" id="end">
+    </div>-->
+</div>
+</body>
+</html>

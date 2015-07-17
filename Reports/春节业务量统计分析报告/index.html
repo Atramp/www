@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>春节业务量统计分析报告</title>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="/resources/css/fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/report.css">
+    <script src="/resources/js/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/resources/js/jquery/jquery.easing.1.3.min.js"></script>
+    <script src="/resources/js/jquery/fullPage/jquery.fullPage.min.js"></script>
+    <script src="/resources/js/jquery/fullPage/jquery.slimscroll.min.js"></script>
+</head>
+<body>
+<div id="fullpage">
+    <div class="section vertical-top" id="cover" style="height: 100vh;background-color: #EF8049;">
+        <img class="cover-icon" src="img/cover.jpeg" style="height: 100vh;">
+    </div>
+    <div class="section">
+        <div id="phase-1" class="text">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工信部发布春节通信数据，春节假期7天内，全国移动短信发送量累计达到</span>
+            <span class="blue">203.9亿条</span>
+            <span>。移动电话去话通话时长累计完成</span>
+            <span class="blue">768.6亿分钟</span>
+            <span>。除夕当日, 短信发送量</span>
+            <span class="blue">82.9亿条</span>
+            <span>，同比</span>
+            <span class="green">下降25%</span>
+            <span>，移动数据流量</span>
+            <span class="blue">725.5万G</span>
+            <span>，同比</span>
+            <span class="red">增长69.5%</span><span>。</span>
+        </div>
+        <img src="img/1.png">
+        <div id="phase-2" class="text">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于经分数据分析中国移动春节业务量，同样表现为传统业务量降低，流量业务激增。话务量方面，除夕当日语音计费时长达到</span>
+            <span class="blue">94亿分钟</span>
+            <span>，同比</span>
+            <span class="green">下降6.4%</span>
+            <span>；春节7天整体较去年同期呈下降趋势，仅在初六高于去年并达到峰值</span>
+            <span class="blue">104.5亿分钟</span>
+            <span>；除夕和初一的长途语音时长显著提升，除夕当日长途计费时长占比达到</span>
+            <span class="blue">7.2%</span><span>。</span>
+        </div>
+        <img src="img/2.png">
+        <img src="img/3.png">
+        <div id="phase-3" class="text">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;短信业务方面，除夕当日短信计费量达到</span>
+            <span class="blue">64亿条</span><span>，同比</span>
+            <span class="green">下降23%</span>
+            <span>（中国电信除夕峰值业务量同比下降32%）；除夕当天为全年峰值，是平时业务量的</span>
+            <span class="red"> 6倍</span>
+            <span>左右，初二后逐渐回落到平时水平。初二到初六的短信计费量同比平稳。</span>
+        </div>
+        <img src="img/4.png">
+        <img src="img/5.png">
+        <div id="phase-4" class="text">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据业务方面，除夕当日移动数据流量达到</span>
+            <span class="blue">5198TB</span>
+            <span>，同比</span>
+            <span class="red">增长177%</span>
+            <span>（中国电信C网数据峰值业务量同比增长20.55%，中国联通数据流量除夕达到1618TB）；分网络看，流量提升源自4G业务的快速增长，除夕当日的4G流量达到</span>
+            <span class="blue"> 2559.4TB</span>
+            <span>，占当日流量的</span>
+            <span class="blue"> 49.2%</span>
+            <span>。3G流量达到</span>
+            <span class="blue"> 781.6TB</span>
+            <span>，同比</span>
+            <span class="red">增长82%</span>。
+        </div>
+        <img src="img/6.png">
+        <img src="img/7.png">
+    </div>
+    <div class="section vertical-top" id="end" >
+        <img class="cover-icon" src="img/end.jpeg" style="height: 100vh;">
+    </div>
+</div>
+<script type="text/javascript">
+    $('.cover-icon').fadeTo(1000, 1);
+    $(function () {
+        $('#fullpage').fullpage({
+            css3: true,
+            scrollingSpeed: 500,
+            scrollOverflow: true
+        });
+    });
+</script>
+</body>
+</html>

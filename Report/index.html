@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>4G手机客户分析报告</title>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="/resources/css/common.css">
+    <link rel="stylesheet" href="/resources/css/fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/report.css">
+    <script src="/resources/js/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/resources/js/jquery/jquery.easing.1.3.min.js"></script>
+    <script src="/resources/js/jquery/fullPage/jquery.fullPage.min.js"></script>
+    <script src="/resources/js/echarts/echarts-all.js"></script>
+    <script src="/resources/js/echarts/theme/macarons.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[wider]').css('width','120%');
+            $('[wider]').css('margin-left','-10%');
+            $('[wider] .textDiv').css('padding','0 10%');
+        });
+    </script>
+</head>
+<body>
+<div id="fullpage">
+    <div class="section" id="cover" page-0>
+        <img class="cover-icon" src="img/logo.png" />
+        <div class="cover-title">4G手机客户分析报告</div>
+    </div>
+    <div class="section" wider page-1>
+        <div>
+            <li>4G客户发展情况如何？</li>
+        </div>
+        <div id="4G-customer-chart-div" class="chartDiv" ></div>
+        <div id="4G-customer-text-div" class="textDiv">
+            <span class="important">8485万：</span>
+            <span>
+                今年以来，4G手机客户保持快速增长趋势，截止11月份已经达到8485万户。
+            </span>
+        </div>
+    </div>
+    <div class="section" page-2>
+        <div>
+            <li>客户喜欢什么手机？</li>
+        </div>
+        <div id="brand-chart-div" class="chartDiv"></div>
+        <div id="brand-text-div" class="textDiv">
+            <span>
+                排名前20位的4G手机占到6成市场份额，其中：苹果在高端市场具有绝对优势；
+                中低端客户更倾向于选择国产手机。同时，高端用户的ARPU值明显高于中低端用户。
+            </span>
+        </div>
+    </div>
+    <div class="section" page-3>
+        <div>
+            <li>客户从哪来？</li>
+        </div>
+        <div id="4G-customer-chart-div-2" class="chartDiv" style="height: 20vh;"></div>
+        <div id="4G-customer-text-div-2" class="textDiv" style="margin-top:0vh;">
+            <span class="important">87%：</span>
+            <span>4G手机客户主要来源于2G和3G换机群体，存量客户转化率高达87%。</span>
+        </div>
+        <div id="arpu-chart-div" class="chartDiv" style="height: 30vh;"></div>
+        <div id="data-chart-div" class="chartDiv" style="height: 30vh;margin-top:-8vh;"></div>
+        <div id="arpu-text-div" class="textDiv" style="margin-top:-8vh;">
+            <span class="important">收入越高，流量越大：</span>
+            <span>
+                4G手机客户的消费能力较高，是全网平均水平的2倍左右；4G手机客户的流量水平高，是全网平均水平的3倍左右。
+            </span>
+        </div>
+    </div>
+    <div class="section" wider page-4>
+        <div>
+            <li>客户流量分布情况如何？</li>
+        </div>
+        <div id="4G-data-chart-div" class="chartDiv" style="height: 30vh;"></div>
+        <div id="4G-data-chart-div-2" class="chartDiv" style="height:40vh;"></div>
+        <div id="4G-data-text-div" class="textDiv" style="margin-top: -3vh">
+            <span class="important">驻留比越高，流量需求越大：</span>
+            <span>
+                4G手机客户的4G网络驻留比高达79%，4G网络有效分流2G和3G的压力。
+                从分档数据看，客户的4G网络驻留比越高，流量需求越大。
+            </span>
+        </div>
+    </div>
+    <div class="section" page-5>
+        <div>
+            <li style="color:#f3704b;font-size: 16px;">如何进一步提升4G网络驻留比？</li>
+        </div>
+        <div id="4G-dev-chart-div" class="chartDiv" style="height: 75vh;"></div>
+        <div id="4G-dev-text-div" class="textDiv" style="margin-top:-12vh;">
+            <span class="important">进一步提升4G网络驻留比：</span>
+            <span>
+                4G手机中27.9%客户不使用4G网络，其中：未更换USIM卡的客户占到18.1%，更换USIM后未订购4G套餐的客户占6.4%。
+                可见，大力推广USIM卡及4G套餐有助于进一步提高4G网络使用。
+            </span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var drawn = "1";
+    $('.cover-icon').fadeTo(1000, 1, function () {
+        $('.cover-title').slideDown();
+    });
+    $(function () {
+        $('#fullpage').fullpage({
+            css3:true,
+            scrollingSpeed:500,
+            afterLoad: function (anchorLink, index) {
+                console.log(drawn + "-" + index);
+                if (drawn.indexOf(index) == -1) {
+                    drawn = drawn.concat(index);
+                    draw(index);
+                }
+            }
+        });
+    });
+
+    var draw = function (index) {
+        if (index == 2) {
+            var curChart = echarts.init(document.getElementById("4G-customer-chart-div"), macarons).setOption({
+                title: {
+                    text: '4G手机客户发展趋势',
+                    subtext: '单位（万户）',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 10
+                    },
+                    subtextStyle: {
+                        fontSize: 8,
+                        color: "#4f5555"
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b} : {c} {d}万户"
+                },
+                legend: {
+                    orient: 'horizontal',
+                    x: 'top',
+                    data: ['4G客户数']
+                }, xAxis: [
+                    {
+                        type: 'category',
+                        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月'],
+                        splitLine: {show: false}
+                    }
+                ], yAxis: [
+                    {
+                        show: false,
+                        type: 'value',
+                        name: '4G客户数',
+                        axisLabel: {
+                            formatter: '{value}'
+                        },
+                        nameTextStyle: {
+                            color: '#808080'
+                        },
+                        splitLine: {show: false}
+                    }
+                ], series: [{
+                    name: '4G客户数',
+                    type: 'bar',
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                position: 'top'
+                            }
+                        }
+                    },
+                    data: [671, 859, 1091, 1355, 1782, 2481, 3256, 4254, 5351, 6877, 8485]
+                }
+                ]
+            });
+            setTimeout(function () {
+                $("#4G-customer-text-div").slideDown()
+            }, 500);
+        } else if (index == 3) {
+            var curChart = echarts.init(document.getElementById("brand-chart-div"), macarons).setOption({
+                title: {
+                    x: 'center',
+                    text: '4G手机终端市场占有率 & ARPU',
+                    textStyle: {
+                        fontSize: 10
+                    }
+                },
+                legend: {
+                    x: 'center',
+                    y: 'bottom',
+                    data: ['占有率（%）', 'ARPU（元）']
+                },
+                tooltip: {
+                    trigger: 'yAxis'
+                },
+                grid: {
+                    borderColor: '#fff'
+                },
+                xAxis: [
+                    {
+                        name: '占有率',
+                        type: 'value',
+                        max: 13,
+                        axisLabel: {
+                            formatter: function (name) {
+                                return name + "%";
+                            }
+                        },
+                        splitLine: {show: false}
+                    }, {
+                        name: 'ARPU',
+                        type: 'value',
+                        'max': 180,
+                        axisLabel: {
+                            formatter: function (name) {
+                                return name + "元";
+                            }
+                        },
+                        splitLine: {show: false}
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'category',
+                        data: ["联想A320t", "步步高Y22L", "联想A360t", "OPPO R6007", "OPPO R2017",
+                            "步步高Y18L", "OPPO R8007", "酷派8705", "步步高X3L", "OPPO R831S",
+                            "联想A788t", "小米2014501", "酷派8720", "小米2014022", "三星G9008V",
+                            "三星N9008V", "苹果6(A1586)", "5S(A1528)", "5S(A1518)",
+                            "5S(A1530)"],
+                        axisLabel: {
+                            textStyle: {
+                                fontSize: 10,
+                                color: '#808080'
+                            }
+                        },
+                        axisTick: {
+                            interval: 0
+                        },
+                        splitLine: {show: false}
+                    }
+                ],
+                series: [
+                    {
+                        name: '占有率（%）',
+                        type: 'bar',
+                        data: [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 2, 2, 3, 4, 4, 13]
+                    },
+                    {
+                        name: 'ARPU（元）',
+                        type: 'bar',
+                        xAxisIndex: '1',
+                        data: [63, 76, 74, 89, 82, 82, 97, 67, 92, 79, 78, 77, 76, 78, 135, 145, 164, 113, 160, 121]
+                    }
+                ]
+            });
+            setTimeout(function () {
+                $("#brand-text-div").slideDown()
+            }, 1000);
+        } else if (index == 4) {
+            var curChart0 = echarts.init(document.getElementById("4G-customer-chart-div-2"), macarons).setOption({
+                title: {
+                    text: '4G客户构成',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 10
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}"
+                },
+                series: [
+                    {
+                        name: '',
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '45%'],
+                        data: [
+                            {value: 19, name: '3G客户换机:19%'},
+                            {value: 68, name: '2G客户换机:68%'},
+                            {value: 13, name: '新入网客户:13%'}
+                        ]
+                    }
+                ]
+            });
+            setTimeout(function () {
+                $("#4G-customer-text-div-2").slideDown()
+            }, 1000);
+
+            var curChart = echarts.init(document.getElementById("arpu-chart-div"), macarons).setOption({
+                title: {
+                    text: 'ARPU对比情况',
+                    subtext: '单位（元）',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 10
+                    },
+                    subtextStyle: {
+                        fontSize: 8,
+                        color: "#4f5555"
+                    }
+                },
+                tooltip: {
+                    trigger: 'yAxis'
+                },
+                grid: {
+                    borderColor: '#fff'
+                },
+                xAxis: [
+                    {
+                        name: 'ARPU',
+                        type: 'value',
+                        max: 120,
+                        splitLine: {show: false}
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'category',
+                        data: ['4G客户', '全网客户'],
+                        axisLabel: {
+                            textStyle: {
+                                fontSize: 10,
+                                color: '#808080'
+                            }
+                        },
+                        splitLine: {show: false}
+                    }
+                ],
+                series: [
+                    {
+                        type: 'bar',
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    position: 'insideRight'
+                                }
+                            }
+                        },
+                        data: [110, 54]
+                    }
+                ]
+            });
+            var curChart2 = echarts.init(document.getElementById("data-chart-div"), macarons).setOption({
+                title: {
+                    text: '流量对比情况',
+                    subtext: '单位（MB）',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 10
+                    },
+                    subtextStyle: {
+                        fontSize: 8,
+                        color: "#4f5555"
+                    }
+                },
+                tooltip: {
+                    trigger: 'yAxis'
+                },
+                grid: {
+                    borderColor: '#fff'
+                },
+                xAxis: [
+                    {
+                        name: '流量',
+                        type: 'value',
+                        splitLine: {show: false}
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'category',
+                        data: ['4G客户', '全网客户'],
+                        axisLabel: {
+                            textStyle: {
+                                fontSize: 10,
+                                color: '#808080'
+                            }
+                        },
+                        splitLine: {show: false}
+                    }
+                ],
+                series: [
+                    {
+                        type: 'bar',
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    position: 'insideRight'
+                                }
+                            }
+                        },
+                        data: [660, 215]
+                    }
+                ]
+            });
+            setTimeout(function () {
+                $("#arpu-text-div").slideDown()
+            }, 1000);
+        } else if (index == 5) {
+            var curChart = echarts.init(document.getElementById("4G-data-chart-div"), macarons).setOption({
+                title: {
+                    text: '4G手机流量构成情况',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 10
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}"
+                },
+                series: [
+                    {
+                        name: '',
+                        type: 'pie',
+                        radius: '55%',
+                        center: ['50%', '60%'],
+                        data: [
+                            {value: 9, name: '2G流量:19%'},
+                            {value: 12, name: '3G流量:68%'},
+                            {value: 79, name: '4G流量:13%'}
+                        ]
+                    }
+                ]
+            });
+            var curChart2 = echarts.init(document.getElementById("4G-data-chart-div-2"), macarons).setOption({
+                title: {
+                    text: '各类4G客户的DOU情况',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 10
+                    },
+                    subtext: '单位（MB）',
+                    subtextStyle: {
+                        fontSize: 8
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{b}: <br/>{c}"
+                },
+                xAxis: [
+                    {
+                        name: '驻留比',
+                        type: 'category',
+                        data: ['0~20', '20~50', '50~80', '80~100'],
+                        splitLine: {show: false},
+                        nameTextStyle: {
+                            fontSize: 10
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        show: false,
+                        type: 'value',
+                        splitLine: {show: false}
+                    }
+                ],
+                series: [
+                    {
+                        type: 'bar',
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    position: 'top'
+                                }
+                            }
+                        },
+                        data: [
+                            305, 417, 554, 1025
+                        ]
+
+                    }
+                ]
+            });
+            setTimeout(function () {
+                $("#4G-data-text-div").slideDown()
+            }, 1000);
+        } else if (index == 6) {
+            var curChart = echarts.init(document.getElementById("4G-dev-chart-div"), macarons).setOption({
+                title: {
+                    text: '4G手机的网络使用情况',
+                    x: 'center',
+                    textStyle: {
+                        fontSize: 10,
+                        color: "#ffffff"
+                    }
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'right',
+                    y: 20,
+                    selectedMode: false,
+                    data: ['已使用', '未使用', '未更换USIM卡', '未订购4G套餐', '其他'],
+                    formatter: function (name) {
+                        if (name == '已使用')
+                            return '已使用4G网络(72.9%)';
+                        else if (name == '未使用')
+                            return '未使用4G网络(27.1%)';
+                        else if (name == '未更换USIM卡')
+                            return '未更换USIM卡(18.1%)';
+                        else if (name == '未订购4G套餐')
+                            return '未订购4G套餐(6.4%)';
+                        else if (name == '其他')
+                            return '其他(3.4%)';
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                series: [
+                    {
+                        name: '',
+                        type: 'pie',
+                        selectedMode: 'single',
+                        radius: [0, 30],
+
+                        x: '20%',
+                        width: '40%',
+                        funnelAlign: 'left',
+                        max: 1548,
+
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    position: 'inner'
+                                },
+                                labelLine: {
+                                    show: false
+                                }
+                            }
+                        },
+                        data: [
+                            {value: 72.1, name: '已使用'},
+                            {value: 27.9, name: '未使用'}
+                        ]
+                    }, {
+                        name: '',
+                        type: 'pie',
+                        radius: [40, 70],
+
+                        x: '60%',
+                        width: '35%',
+                        funnelAlign: 'right',
+                        max: 1048,
+
+                        data: [
+                            {value: 72.1, name: '使用4G网络'},
+                            {value: 18.1, name: '未更换USIM卡'},
+                            {value: 6.4, name: '未订购4G套餐'},
+                            {value: 3.4, name: '其他'}
+                        ]
+                    }
+                ]
+            });
+            setTimeout(function () {
+                $("#4G-dev-text-div").slideDown()
+            }, 1000);
+        }
+    }
+
+</script>
+</body>
+</html>

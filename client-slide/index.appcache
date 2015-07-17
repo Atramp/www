@@ -1,0 +1,15 @@
+CACHE MANIFEST
+
+CACHE:
+        img/banner1.jpg
+        img/banner2.jpg
+        img/banner3.jpg
+        img/banner4.jpg
+        img/banner5.jpg
+        img/banner6.jpg
+
+/resources/js/jquery/jquery-1.10.2.min.js
+pictures.js?v=20150414041215
+main.html
+
+VERSION: 20150414041215
