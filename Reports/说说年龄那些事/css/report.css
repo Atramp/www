@@ -1,0 +1,252 @@
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 720px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 720px) and  (max-width: 1080px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    html {
+        font-size: 36px;
+    }
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-weight: bolder;
+    font-family: 黑体, Hiragino Sans GB;
+}
+
+body, div {
+    margin: 0;
+    padding: 0;
+}
+
+span, p {
+    line-height: 120%;
+    color: #757575;
+}
+
+span.bigger, p .bigger {
+    font-size: 1.2rem;
+}
+
+span.label {
+    color: white;
+    border-radius: 4rem;
+    text-align: center;
+    padding: 0.2rem 1rem;
+    display: inline-block;
+}
+
+span.label.green {
+    background: #4DBAC2;
+}
+
+span.label.purple {
+    background: #967CB7;
+}
+
+span.label.blue {
+    background: #4181C4;
+}
+
+.hidden {
+    display: none;
+}
+
+.border {
+    border: solid 0.2rem #757575;
+    border-radius: 2rem;
+}
+
+.grey {
+    color: #757575;
+}
+
+.blue {
+    color: #01A4E9;
+}
+
+.red {
+    color: #E30077;
+}
+
+.green {
+    color: #4DBAC2;
+}
+
+img {
+    width: auto;
+}
+
+.content {
+    background: url("./../img/bottom.gif") no-repeat bottom left;
+    background-size: 100vw;
+}
+
+.title {
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    width: 100vw;
+}
+
+.foreword {
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 150%;
+    padding: 0 5vw;
+}
+
+.refresh {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    margin-left: 38vw;
+    border-radius: 0.5em;
+    opacity: 0.5;
+}
+
+#page-4-main-1 div img {
+
+}
+
+#page-5-main-1 {
+    padding: 0vh 0 0vh 5vw;
+}
+
+#page-5-main-1 .persons {
+    display: inline-block;
+    position: relative;
+    width: 33vw;
+    height: 8vw;
+    bottom: 2vw;
+}
+
+#page-5-main-1 .persons img {
+    display: none;
+    height: 8vw;
+    margin-left: -1vw;
+}
+
+#page-5-main-1 .persons span {
+    background-color: #007CC2;
+    position: absolute;
+    top: 1.5vh;
+    left: 3vw;
+    padding: 0;
+}
+
+#page-5-main-1 .person {
+    display: none;
+    height: 12vw;
+}
+
+#page-5-main-1 .person-bar {
+    width: 0vw;
+    margin-bottom: 1.5vw;
+}
+
+#page-5-text {
+    border: solid 0.2rem #8a6d3b;
+    border-radius: 1rem;
+    width: 95vw;
+    margin-left: 1vw;
+    padding: 1vh 1vw;
+}
+
+#page-5-main-2 {
+    padding: 0vh 0 0vh 3vw;
+    height: 28vh;
+}
+
+#page-5-main-2 div {
+    display: none;
+}
+
+#page-6-main .bar {
+    width: 15vw;
+    position: absolute;
+    display: none;
+}
+
+.page-7-main {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+}
+
+.page-7-main .person {
+    height: 40vw;
+    position: absolute;
+    bottom: -7vw;
+    left: 3vw;
+}
+
+.page-7-main .text {
+    width: 45vw;
+    position: absolute;
+    top: 5vw;
+    left: 17vw;
+    display: none;
+}
+
+.page-7-main .dot {
+    width: 15vw;
+    position: absolute;
+    display: none;
+}
+
+.page-10-stage {
+    padding: 0 10vw;
+    position: relative;
+}
+
+.page-10-stage .icon {
+    width: 7vw;
+    position: absolute;
+    display: none;
+}
+
+.shake-animate {
+    -webkit-animation: shake-frames 0.1s;
+    animation-iteration-count: 3;
+}
+
+@keyframes shake-frames {
+    0% {
+        transform: rotate(-5deg);
+    }
+    25% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}

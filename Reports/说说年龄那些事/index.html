@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html manifest="index.appcache">
+<head>
+    <title>说说年龄那些事</title>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="/resources/css/fullPage/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/report.css">
+    <script src="/resources/js/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/resources/js/jquery/jquery-ui-1.10.3.min.js"></script>
+    <script src="/resources/js/jquery/jquery.easing.1.3.min.js"></script>
+    <script src="/resources/js/jquery/fullPage/jquery.fullPage.min.js"></script>
+    <script src="/resources/js/jquery/fullPage/jquery.slimscroll.min.js"></script>
+    <script>
+        // Check if a new cache is available on page load.
+        if (window.applicationCache) {
+            window.applicationCache.addEventListener('updateready', function (e) {
+                if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+                    window.location.reload();
+                }
+            }, false);
+        }
+    </script>
+</head>
+<body>
+<div id="fullpage">
+    <!----->
+    <div class="section">
+        <div id="phase-1" style="background-color: #3D619D;height: 100vh;">
+            <img id="img-1-1" src="img/page-1-bg.gif" style="z-index: 1;display: inline;width: 100%;">
+            <img id="img-1-2" src="img/page-1-text.gif"
+                 style="display: none;z-index: 3;height:35vh;position: absolute;top:10vh;">
+            <img id="img-1-3" src="img/page-1-phone.gif"
+                 style="display: none;z-index: 2;height:40vh;position: absolute;top:40vh;">
+
+            <p id="page-1-comment"
+               style="display:none;color: white;font-size: 1.5rem;text-align: center;width: 100vw;z-index: 9;bottom:5vh;position: absolute;">
+                业务支撑系统部信息管理处 出品
+            </p>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-1-2" style="background-color: #EBFAFF;width:100vw;height: 100vh;position: relative;">
+            <img src="img/page-1-2-head.png" style="width: 100vw;position: absolute;top: 10vh;">
+            <img src="img/page-1-2-bottom.gif" style="width: 100vw;position: absolute;bottom: 0;">
+            <img src="img/page-1-2-cloud.gif" style="width: 10vw;position: absolute; top: 5vh;right: 10vw;">
+            <img src="img/page-1-2-cloud.gif" style="width: 10vw;position: absolute; top: 75vh;left: -2vw;">
+            <img src="img/page-1-2-cloud.gif" style="width: 10vw;position: absolute; top: 80vh;left: 40vw;">
+            <img src="img/page-1-2-cloud.gif" style="width: 10vw;position: absolute; top: 70vh;right: 5vw;">
+            <img src="img/page-1-2-balloon.png" style="width: 15vw;position: absolute; bottom: 30vw;right: 8vw;">
+
+            <div style="position: absolute;top: 35vh;">
+                <span class="foreword" style="font-size: 1.8rem;color: #F18C91;top:20vh;">鲜肉萝莉、熟男御姐、大爷大妈</span><br/><br/>
+                <span class="foreword">谁才是通信消费的土豪一族？</span>
+                <span class="foreword">谁在交往圈中穿梭，为生活和工作忙碌？</span>
+                <span class="foreword">谁的足迹海角天涯，一路不停？</span><br/><br/><br/>
+                <span class="foreword" style="top:35vh;color: #757575;font-weight: bolder;font-size: 1.5rem;">大数据为你还原不同年龄段的客户生活</span>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-2" class="content" style="background-color: #EBFAFF;height: 100vh;">
+            <img id="page-2-title" src="img/page-2-title.png" class="title"><br/>
+
+            <div style="width: 100vw;height: 28vh;text-align: center;position: relative;top:3vw;">
+                <div id="page-2-main" style="display: none;width:100vw;height: 25vh;margin-top: 1vw;">
+                    <img src="img/page-2-main.gif" style="width: 60%;max-height: 25vh;"/>
+                </div>
+                <span class="border" style="width: 13rem;position: absolute;top: -2vh;right:5vw;text-align: right; padding:0.2rem 0.5rem;">
+                    熟男御姐是主力军，鲜肉萝莉长江后浪推前浪
+                </span>
+            </div>
+            <div style="height: 50vh;">
+                <div id="page-2-legend" style="width: 100vw;height:10vh;text-align: center;">
+                    <div id="page-2-part-2-comment" style="width: 100vw;height:1.5rem;text-align:center;padding:0.2rem 0.5rem;">
+                        <span>城市客户更年轻化，比农村地区年轻了</span><span class="bigger green">3.4岁</span><span>哟</span>
+                    </div>
+                    <div style="margin-top:3vh;">
+                        <span class="label green" style="">鲜肉 萝莉</span>
+                        <span class="label purple" style="margin-left:1rem;">熟男 御姐</span>
+                        <span class="label blue" style="margin-left:1rem;">大爷 大妈</span>
+                    </div>
+                </div>
+                <div style="margin-top: 3vh;height: 42vw;">
+                    <img id="page-2-city" src="img/page-2-city.gif" style="width:0;">
+                    <img id="page-2-xian" src="img/page-2-xian.gif" style="width:0;">
+                    <img id="page-2-country" src="img/page-2-country.gif" style="width:0;">
+                </div>
+                <div id="page-2-comment" style="padding: 0 5vw;text-align: center;display: none;">
+                    <span class="bigger red">✭</span>
+                    <span>对实名制后入网且去掉一证多号的客户群体进行分析，其中：鲜肉萝莉、熟男御姐、大爷大妈分别为18-29岁、30-50岁、50岁以上客户。 </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-3" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-3-title" src="img/page-3-title.png" class="title"><br/>
+
+            <div id="page-3-info">
+                <img src="img/page-3-money.gif" style="height: 6vh;float: right;margin-right: 10vw;">
+
+                <div style="display: inline-block;width: 100vw;margin-top: -5rem;">
+                    <span style="margin-left: 5vw;">鲜肉萝莉消费是大爷大妈的</span><span class="bigger red">2倍</span><span>左右</span><br/>
+                    <span class="bigger red" style="margin-left: 12vw;">50%</span><span>左右的鲜肉和萝莉在通信消费上是小资和土豪哈</span>
+                </div>
+                <br/><br/>
+                <span class="blue" style="width: 100vw;text-align: center;font-size:1.5rem;display: inline-block;">鲜肉萝莉的世界你可以懂</span>
+
+                <div style="text-align: center;height: 20vh;">
+
+                    <img id="page-3-youth" src="img/page-3-youth.gif" style="display: none;height: 20vh;"/>
+                    <img id="page-3-middle" src="img/page-3-middle.gif" style="display: none;height: 20vh;"/>
+                    <img id="page-3-old" src="img/page-3-old.gif" style="display: none;height: 20vh;"/>
+                </div>
+
+                <div style="height: 30vh">
+                    <div style="position: relative;top:10vh;">
+                        <img id="page-3-youth-bar" src="img/page-3-youth-bar.png"
+                             style="display: inline;width: 100vw;position: absolute;bottom: 0;">
+                        <img id="page-3-hao" src="img/page-3-hao.gif"
+                             style="height:10vh;display: inline;position: absolute;bottom: 1vw;left: -30vw;">
+                    </div>
+                    <div style="position: relative;top:18vh;">
+                        <img id="page-3-middle-bar" src="img/page-3-middle-bar.png"
+                             style="display: inline;width: 100vw;position: absolute;bottom: 0;">
+                        <img id="page-3-zi" src="img/page-3-zi.png"
+                             style="height:10vh;display: inline;position: absolute;bottom: 1vw;left: -30vw;">
+                    </div>
+                    <div style="position: relative;top:26vh;">
+                        <img id="page-3-old-bar" src="img/page-3-old-bar.png"
+                             style="display: inline;width: 100vw;position: absolute;bottom: 0;">
+                        <img id="page-3-diao" src="img/page-3-diao.png"
+                             style="height:10vh;display: inline;position: absolute;bottom: 1vw;left: -30vw;">
+                    </div>
+                </div>
+                <div id="page-3-comment" style="padding: 0 5vw;text-align: center;display: none;">
+                    <span class="bigger red">✭</span>
+                    <span>屌丝、小资和土豪分别为50元以下、50-120元和120元以上。 </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-4" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-4-title" src="img/page-4-title.png" class="title"><br/>
+
+            <div id="page-4-text" style="padding: 0 0.5rem">
+                <span style="color:#4584D3;text-align: left;font-size: 0.9rem;">你造么</span><br/>
+                <span>鲜肉萝莉、熟男御姐、大爷大妈每天分别通话</span><span class="blue bigger">10/8/6</span>
+                <span>分钟</span><br/>
+
+                <span>大爷大妈本地通话占</span><span class="blue bigger">81%</span>
+                <span>以上，长途和漫游最少</span><br/>
+
+                <span>大爷大妈主动性弱，</span><span class="blue bigger">21%</span>
+                <span>没有通话，</span><span class="blue bigger">13%</span>
+                <span>主动打电话5次以下</span>
+            </div>
+            <br/>
+
+            <div style="height:30vh;">
+                <div>
+                    <span style="display:inline-block;width: 40vw;text-align: center">通话分钟数</span>
+                    <span class="label green" style="width:10vw;">本地</span>
+                    <span class="label" style="width:10vw;background-color: #B67DFC">长途</span>
+                    <span class="label" style="width:10vw;background-color: #2D8FFF">漫游</span>
+                </div>
+                <div id="page-4-main-1" style="display: none;">
+                    <div style="vertical-align: middle;height:8vh;padding: 0 5vw;margin-top: 1vh;">
+                        <img src="img/page-4-youth.png" style="height: 8vh;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh 1vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-youth-num.png" style="display:inline-block;height: 4vw;margin:1.5vh auto 1.5vh 0vw;">
+                        <img src="img/page-4-youth-bar.png" style="display: inline-block;height: 5vw;margin: 1.5vh auto 1.5vh 2vw;">
+                    </div>
+                    <div style="vertical-align: middle;height:8vh;padding: 0 5vw;">
+                        <img src="img/page-4-middle.png" style="height: 8vh;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh 1vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;opacity: 0;">
+                        <img src="img/page-4-middle-num.png" style="display:inline-block;height: 4vw;margin:1.5vh auto 1.5vh 0vw;">
+                        <img src="img/page-4-middle-bar.png" style="display: inline-block;height: 5vw;margin: 1.5vh auto 1.5vh 2vw;">
+                    </div>
+                    <div style="vertical-align: middle;height:8vh;padding: 0 5vw;">
+                        <img src="img/page-4-old.png" style="height: 8vh;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh 1vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;opacity: 0;">
+                        <img src="img/page-4-phone-icon.png" style="display:inline-block;height: 6vw;margin:1vh auto 1vh -2vw;opacity: 0;">
+                        <img src="img/page-4-old-num.png" style="display:inline-block;height: 4vw;margin:1.5vh auto 1.5vh 0vw;">
+                        <img src="img/page-4-old-bar.png" style="display: inline-block;height: 5vw;margin: 1.5vh auto 1.5vh 2vw;">
+                    </div>
+                </div>
+            </div>
+            <span class="border" style="width: 90vw;margin-left:3vw;padding:1vw 2vw;display: inline-block;text-align: center;">
+                当人口老龄化、空巢等社会问题接踵而来时，让我们用真挚的问候融化老年人的孤独……
+            </span>
+
+            <div style="margin-top: 1vh;position: relative;">
+                <div style="width: 50vw;padding-left:3vw;display: inline-block;">
+                    <span class="label" style="background-color: #E30077;font-size:0.8rem;">没有通话</span>
+                    <span class="label" style="background-color: #8DC21F;font-size:0.8rem;">主叫通话5次以下</span>
+                </div>
+                <div id="page-4-main-2" style="width: 50vw;padding: 0 5vw;display: none;">
+                    <img src="img/page-4-youth-2.png" style="height: 6vh;">
+                    <img src="img/page-4-middle-2.png" style="height: 6vh;">
+                    <img src="img/page-4-old-2.png" style="height: 6vh;">
+                </div>
+                <img id="page-4-phone" src="img/page-4-phone.png" style="width: 40vw;position: absolute;top:-2vh;right:5vw;">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-5" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-5-title" src="img/page-5-title.png" class="title"><br/>
+
+            <div>
+                <div>
+                    <span style="display: inline-block;width:50vw;color:#4584D3;float:left;text-align: center;">主叫交往圈</span>
+                    <span style="display: inline-block;width:50vw;color:#4584D3;float:left;text-align: center;">主叫交往圈20人以上比例</span>
+                </div>
+                <div id="page-5-main-1">
+                    <div class="persons">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <span class="label" style="display:none;">14.9人</span>
+                    </div>
+                    <div style="height: 12vw;display: inline-block;">
+                        <img class="person" src="img/page-5-youth.png">
+                    </div>
+                    <img class="person-bar" src="img/page-5-bar-1-1.png">
+                    <br/>
+
+                    <div class="persons">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <span class="label" style="display:none;">12.3人</span>
+                    </div>
+                    <div style="height: 12vw;display: inline-block;">
+                        <img class="person" src="img/page-5-middle.png">
+                    </div>
+                    <img class="person-bar" src="img/page-5-bar-1-2.png">
+                    <br/>
+
+                    <div class="persons">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <img src="img/page-5-person-light.png">
+                        <span class="label" style="display:none;">9.2人</span>
+                    </div>
+                    <div style="height: 12vw;display: inline-block;">
+                        <img class="person" src="img/page-5-old.png">
+                    </div>
+                    <img class="person-bar" src="img/page-5-bar-1-3.png">
+                </div>
+                <br/>
+
+                <div id="page-5-text">
+                    <span>鲜肉萝莉的主叫交往圈在</span><span class="bigger red">15人</span><span>左右，亲朋好友一箩筐</span><br/>
+                    <span class="bigger red">22%</span><span>的鲜肉萝莉的主叫交往圈超过20人</span><br/>
+                    <span>六成鲜肉萝莉的通信基站数超过</span><span class="bigger red">10个</span><span>，工作和生活半径较大</span><br/>
+                    </span>
+                </div>
+                <br/>
+                <span style="width: 100vw;text-align: center;font-size:1.5rem;color:#4584D3;display: inline-block;">通信基站数</span>
+
+                <div id="page-5-main-2">
+                    <div>
+                        <img src="img/page-5-youth.png" style="height: 8vh;">&nbsp;
+                        <img src="img/page-5-bar-2-1.png" style="width: 80vw;margin-bottom:1.5vw; "><br/>
+                    </div>
+                    <div>
+                        <img src="img/page-5-middle.png" style="height: 8vh;">&nbsp;
+                        <img src="img/page-5-bar-2-2.png" style="width: 80vw;margin-bottom:1.5vw; "><br/>
+                    </div>
+                    <div>
+                        <img src="img/page-5-old.png" style="height: 8vh;">&nbsp;
+                        <img src="img/page-5-bar-2-3.png" style="width: 80vw;margin-bottom:1.5vw; "><br/>
+                    </div>
+                </div>
+                <div style="width: 82vw;margin-left: 18vw;">
+                    <span class="label" style="background-color: #E30077">0-2个</span>
+                    <span class="label" style="background-color: #A572ED">3-5个</span>
+                    <span class="label" style="background-color: #007CC2">6-10个</span>
+                    <span class="label" style="background-color: #8DC21F">10个以上</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-6" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-6-title" src="img/page-6-title.png" class="title"><br/>
+
+            <div style="padding: 0 5vw;position: relative;">
+                <p style="line-height: 150%;">
+                    你写PPT时，阿拉斯加的鳕鱼正跃出水面<br/>
+                    你看报表时，白马雪山的金丝猴刚好爬上树尖<br/>
+                    你挤地铁时，西藏的山鹰一直盘旋云端……
+                </p>
+                <img id="page-6-plane" src="img/page-6-plane.png" style="width: 20vw;position: absolute;bottom:0vw;right:8vw;display: none;">
+            </div>
+            <div id="page-6-main" align="center" style="position: relative;">
+                <img src="img/page-6-main.png" style="width: 80vw;">
+                <img class="bar" src="img/page-6-bar-1.png" style="bottom:55.6vw;left:38vw;">
+                <img class="bar" src="img/page-6-bar-2.png" style="bottom:55.6vw;left:68vw;">
+                <img class="bar" src="img/page-6-bar-3.png" style="bottom:5.0vw;left:20vw;">
+                <img class="bar" src="img/page-6-bar-4.png" style="bottom:5.0vw;left:48vw;">
+                <img id="page-6-diao" src="img/page-6-diao.png" style="width: 50vw;position: absolute;top:25vw;left:0vw;display: none;">
+                <img id="page-6-hao" src="img/page-6-hao.png" style="width: 50vw;position: absolute;bottom:15vw;right:0vw;display: none;">
+
+                <div style="width: 100vw;height:10vw;position: absolute;bottom:27vw;text-align: center;">
+                    <div id="page-6-vs" style="width: 100vw;height:10vw;display: none;">
+                        <img src="img/page-6-vs.png" style="width:10%;max-height: 15vw;">
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative;">
+                <p class="blue" style="width:100vw;font-size: 1.2rem;text-align: center;">世界这么大，我带着你，你带着&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出去走走吧</p>
+                <img src="img/page-3-money.gif" style="width: 10vw;position: absolute;bottom: -1vw;right:27vw;">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-7" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-7-title" src="img/page-7-title.png" class="title"><br/>
+
+            <div class="page-7-main">
+                <img src="img/page-7-china.png" style="width: 100vw;">
+                <span class="green" style="display: block;position: absolute;top:120vw;right: 10vw;font-size: 4vw">身体和灵魂，总有一个在路上</span>
+                <img id="page-7-youth" class="person" src="img/page-7-youth.png">
+                <img id="page-7-youth-text" class="text" src="img/page-7-youth-text.png">
+
+                <div id="page-7-youth-dot">
+                    <img class="dot" src="img/page-7-1-beijing.png" style="top: 22vw;left:60vw;">
+                    <img class="dot" src="img/page-7-1-tianjin.png" style="top: 25vw;left:72vw;">
+                    <img class="dot" src="img/page-7-1-shanghai.png" style="top: 48vw;left:75vw;">
+                    <img class="dot" src="img/page-7-1-jiangxi.png" style="top: 54vw;left:65vw;">
+                    <img class="dot" src="img/page-7-1-guizhou.png" style="top: 60vw;left:42vw;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-7-2" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-7-2-title" src="img/page-7-title.png" class="title"><br/>
+
+            <div class="page-7-main">
+                <img src="img/page-7-china.png" style="width: 100vw;">
+                <span class="green" style="display: block;position: absolute;top:120vw;right: 10vw;font-size: 4vw">身体和灵魂，总有一个在路上</span>
+                <img id="page-7-middle" class="person" src="img/page-7-middle.png">
+                <img id="page-7-middle-text" class="text" src="img/page-7-middle-text.png">
+
+                <div id="page-7-middle-dot">
+                    <img class="dot" src="img/page-7-2-beijing.png" style="top: 22vw;left:60vw;">
+                    <img class="dot" src="img/page-7-2-tianjin.png" style="top: 25vw;left:72vw;">
+                    <img class="dot" src="img/page-7-2-shanghai.png" style="top: 48vw;left:75vw;">
+                    <img class="dot" src="img/page-7-2-jiangxi.png" style="top: 60vw;left:60vw;">
+                    <img class="dot" src="img/page-7-2-anhui.png" style="top: 44vw;left:64vw;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-7-3" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-7-3-title" src="img/page-7-title.png" class="title"><br/>
+
+            <div class="page-7-main">
+                <img src="img/page-7-china.png" style="width: 100vw;">
+                <span class="green" style="display: block;position: absolute;top:120vw;right: 10vw;font-size: 4vw">身体和灵魂，总有一个在路上</span>
+                <img id="page-7-old" class="person" src="img/page-7-old.png">
+                <img id="page-7-old-text" class="text" src="img/page-7-old-text.png">
+
+                <div id="page-7-old-dot">
+                    <img class="dot" src="img/page-7-3-beijing.png" style="top: 22vw;left:60vw;">
+                    <img class="dot" src="img/page-7-3-tianjin.png" style="top: 25vw;left:72vw;">
+                    <img class="dot" src="img/page-7-3-shanghai.png" style="top: 48vw;left:75vw;">
+                    <img class="dot" src="img/page-7-3-ningxia.png" style="top: 32vw;left:38vw;">
+                    <img class="dot" src="img/page-7-3-fujian.png" style="top: 62vw;left:70vw;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-8" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-8-title" src="img/page-8-title.png" class="title"><br/>
+
+            <div style="position: relative;">
+                <div style="padding: 0 10vw;position: relative;height: 22vw;">
+                    <img id="page-8-youth" src="img/page-8-youth.png" style="width: 22vw;display: none;position: absolute;top:0;left: 10vw;">
+                    <img id="page-8-middle" src="img/page-8-middle.png" style="width: 22vw;display: none;position: absolute;top:0;left: 38vw;">
+                    <img id="page-8-old" src="img/page-8-old.png" style="width: 22vw;display: none;position: absolute;top:0;left: 66vw;">
+                </div>
+
+                <span class="blue bigger" style="display: inline-block;width: 2rem;position: absolute;top:28vw;left:1vw;font-size:0.8rem;">上网时长</span>
+
+                <div style="position: relative;left: 10vw;">
+                    <div id="page-8-text" style="display: none;">
+                        <img src="img/page-8-youth-text.png" style="width: 22vw;vertical-align: middle;">
+                        <img src="img/page-8-middle-text.png" style="width: 22vw;vertical-align: middle;margin-left: 5vw;">
+                        <img src="img/page-8-old-text.png" style="width: 22vw;vertical-align: middle;margin-left: 5vw;">
+                    </div>
+                </div>
+                <br/>
+                <span class="blue bigger" style="display: inline-block;width: 2rem;position: absolute;top:78vw;left:1vw;font-size:0.8rem;">上网流量</span>
+
+                <div style="position: relative;left:10vw;">
+                    <div id="page-8-chart">
+                        <img src="img/page-8-youth-chart.png" style="width: 22vw;position: absolute;bottom:-40vw;max-height:0;">
+                        <img src="img/page-8-middle-chart.png" style="width: 22vw;position: absolute;left: 30vw;bottom:-40vw;max-height:0;">
+                        <img src="img/page-8-old-chart.png" style="width: 22vw;position: absolute;left: 58vw;bottom:-40vw;max-height:0;">
+                    </div>
+                </div>
+                <div style="padding: 0 5vw;position: absolute;top: 90vw;">
+                    <span class="blue bigger">你造么</span><br/>
+                    <span class="grey">鲜肉萝莉每月上网3小时，分别是熟男御姐和大爷大妈的</span><span class="blue bigger">2倍、4倍</span><span class="greye">以上</span><br/>
+                    <span class="grey">鲜肉萝莉对4G接受度高，</span><span class="blue bigger">31%</span><span class="grey">开始使用4G上网</span><br/>
+                    <span class="grey">4G流量高是拉开鲜肉萝莉与熟男御姐、大爷大妈差距的主要原因</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-9" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-9-title" src="img/page-9-title.png" class="title"><br/>
+
+            <p class="grey" style="width: 100vw;text-align: center;">手机游戏和手机阅读是大众最爱；飞信在鲜肉萝莉中影响力较强</p>
+            <span class="label" style="background-color: #c7254e;margin-left: 39vw;">十项业务活跃客户数排名</span>
+
+            <div style="position: relative;padding: 0 5vw;top: 3vw;">
+                <div>
+                    <img src="img/page-4-youth.png" style="width: 10vw;">
+
+                    <div id="page-9-youth" style="display: inline-block;position: absolute;top: 0vw;left: 17vw;">
+                        <div style="display: inline-block;">
+                            <img src="img/page-9-crown-1.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机游戏</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">8.7%</span>
+                        </div>
+                        <br/>
+
+                        <div style="display: inline-block;margin-top: 2vw;">
+                            <img src="img/page-9-crown-2.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机阅读</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">5.8%</span>
+                        </div>
+                        <br/>
+
+                        <div style="display: inline-block;margin-top: 2vw;">
+                            <img src="img/page-9-crown-3.png" style="width: 5vw;">
+                            <span class="bigger"
+                                  style="display: inline-block;position: relative;">飞&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">2.3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div style="position: relative;padding: 0 5vw;top: 3vw;">
+                <div>
+                    <img src="img/page-4-middle.png" style="width: 10vw;">
+
+                    <div id="page-9-middle" style="display: inline-block;position: absolute;top: 0vw;left: 17vw;">
+                        <div style="display: inline-block;">
+                            <img src="img/page-9-crown-1.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机游戏</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">5.6%</span>
+                        </div>
+                        <br/>
+
+                        <div style="display: inline-block;margin-top: 2vw;">
+                            <img src="img/page-9-crown-2.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机阅读</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">4.3%</span>
+                        </div>
+                        <br/>
+
+                        <div style="display: inline-block;margin-top: 2vw;">
+                            <img src="img/page-9-crown-3.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机视频</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">2.0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <div style="position: relative;padding: 0 5vw;top: 3vw;">
+                <div>
+                    <img src="img/page-4-old.png" style="width: 10vw;">
+
+                    <div id="page-9-old" style="display: inline-block;position: absolute;top: 0vw;left: 17vw;">
+                        <div style="display: inline-block;">
+                            <img src="img/page-9-crown-1.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机游戏</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">2.8%</span>
+                        </div>
+                        <br/>
+
+                        <div style="display: inline-block;margin-top: 2vw;">
+                            <img src="img/page-9-crown-2.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机阅读</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">2.2%</span>
+                        </div>
+                        <br/>
+
+                        <div style="display: inline-block;margin-top: 2vw;">
+                            <img src="img/page-9-crown-3.png" style="width: 5vw;">
+                            <span class="bigger" style="display: inline-block;position: relative;">手机视频</span>
+                            <img src="img/page-9-heart.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <img src="img/page-9-heart-light.png" style="width: 4vw;display: none;">
+                            <span class="bigger blue" style="display: none;position: relative;bottom: 0.2rem;left: 1rem;">1.1%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 0 5vw;margin-top: 5vw;position: relative;">
+                <span class="blue bigger">自有业务路漫漫</span><br/>
+                <span>使用热情低，十项业务的活跃客户都不足</span><span class="blue bigger">9%</span><br/>
+                <span>受众窄，小伙伴消费高，土豪常出没，屌丝较少有</span>
+                <img id="page-9-duang" src="img/page-9-duang.png" style="width: 20vw;position: absolute;top: 0;right: 5vw;display: none;">
+            </div>
+            <div id="page-9-bottom" style="margin-top: 2vw;">
+                <img src="img/page-9-bottom-l.png" style="width: 30vw;left: 20vw;position: absolute;display: none;">
+                <img src="img/page-9-bottom-r.png" style="width: 30vw;left: 50vw;position: absolute;display: none;">
+            </div>
+            <p class="blue bigger" style="position: absolute;bottom: 10vw;right: 10vw;">屌丝如何high起来</p>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-10" class="content" style="background-color: #EBFAFF;height: 100vh;display: block;">
+            <img id="page-10-title" src="img/page-10-title.png" class="title">
+
+            <div style="padding: 0 5vw;margin-top: -3vw;font-size: 1.2rem;">
+                <span class="blue bigger">手机大比拼，品牌大赢家</span><span style="font-size: 1.5rem;color:#c7254e;">&nbsp;Top5</span>
+            </div>
+            <br/><br/>
+
+            <div>
+                <div>
+                    <div class="page-10-stage">
+                        <img src="img/page-4-youth.png" style="width: 10vw;">
+                        <img src="img/page-10-stage.png" style="width: 58vw;margin-left: 5vw;">
+                        <img class="icon" src="img/page-10-samsung.png" style="left: 29vw;top: 6vw;">
+                        <img class="icon" src="img/page-10-mi.png" style="left: 40vw;top:0vw;">
+                        <img class="icon" src="img/page-10-apple.png" style="left: 51.5vw;top: -6vw;">
+                        <img class="icon" src="img/page-10-bbk.png" style="left: 63vw;top: 6vw;">
+                        <img class="icon" src="img/page-10-oppo.png" style="left: 73vw;top: 9vw;">
+                    </div>
+                </div>
+                <br/>
+
+                <div>
+                    <div class="page-10-stage">
+                        <img src="img/page-4-middle.png" style="width: 10vw;">
+                        <img src="img/page-10-stage.png" style="width: 58vw;margin-left: 5vw;">
+                        <img class="icon" src="img/page-10-lenovo.png" style="left: 29vw;top: 8vw;">
+                        <img class="icon" src="img/page-10-apple.png" style="left: 40vw;top:-1vw;">
+                        <img class="icon" src="img/page-10-samsung.png" style="left: 51.5vw;top: 0vw;">
+                        <img class="icon" src="img/page-10-mi.png" style="left: 63vw;top: 2vw;">
+                        <img class="icon" src="img/page-10-nokia.png" style="left: 73vw;top: 9vw;">
+                    </div>
+                </div>
+                <br/>
+
+                <div>
+                    <div class="page-10-stage">
+                        <img src="img/page-4-old.png" style="width: 10vw;">
+                        <img src="img/page-10-stage.png" style="width: 58vw;margin-left: 5vw;">
+                        <img class="icon" src="img/page-10-apple.png" style="left: 29vw;top: 1vw;">
+                        <img class="icon" src="img/page-10-samsung.png" style="left: 40vw;top:4vw;">
+                        <img class="icon" src="img/page-10-nokia.png" style="left: 51.5vw;top: 1vw;">
+                        <img class="icon" src="img/page-10-lenovo.png" style="left: 63vw;top: 7vw;">
+                        <img class="icon" src="img/page-10-mi.png" style="left: 73vw;top: 4vw;">
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 0 5vw;position: relative;">
+                <p class="bigger">苹果、三星、小米是大众的最爱</p>
+
+                <p class="bigger">步步高、欧珀等国内品牌受到鲜肉萝莉的追捧</p>
+
+                <p class="bigger">诺基亚和联想在熟男御姐和大爷大妈中间更有影响力</p>
+
+                <div style="display: inline-block;height: 18vw;width: 33vw;">
+                    <img id="page-10-huawei" src="img/page-10-huawei.png" style="width: 33vw;position: absolute;bottom: 5vw;display: none;">
+                </div>
+                <span class="blue bigger" style="position: absolute;right: 5vw;bottom:10vh;">萝卜白菜，各有所爱，不服来战</span>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div id="phase-11" style="background-color: #3D619D;height: 100vh;position: relative;">
+            <img src="img/page-1-bg.gif" style="z-index: 1;display: inline;width: 100%;">
+
+            <p style="color:white;font-size: 2rem;width: 100vw;text-align: center;margin-top: -20vw;">更多精彩 敬请期待</p>
+            <span class="refresh" onclick="location.reload();">点击重新观看</span>
+
+            <p style="color: white;font-size: 1.5rem;text-align: center;width: 100vw;z-index: 9;bottom:5vh;position: absolute;">
+                业务支撑系统部信息管理处 出品
+            </p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var read = '1';
+        $('#fullpage').fullpage({
+            css3: true,
+            scrollingSpeed: 300,
+            afterLoad: function (anchorLink, index) {
+                console.log(read + "-" + index);
+                if (read.indexOf(index) == -1) {
+                    read = read.concat('-').concat(index);
+                    slide(index);
+                }
+            }
+        });
+        slide(1);
+    });
+    var slide = function (index) {
+        setTimeout(function () {
+            index = 14 - $('.section').length + index;
+            console.log(index);
+            if (index == 1) {
+                $('#img-1-3').show('slide', {}, 500, function () {
+                    $('#img-1-3').css('display', 'block');
+                    $('#img-1-2').show('bounce', {}, 500, function () {
+                        $('#img-1-2').css('display', 'block');
+                        $('#page-1-comment').show('scale', {percent: 100}, 300);
+                    }).delay(300);
+                });
+            }
+            if (index > 2) {
+                if (index == 3) {
+                    $('#page-2-main').show('scale', {percent: 100}, 500, function () {
+                        $('#page-2-city').animate({width: '100vw'}, 500, function () {
+                            $('#page-2-xian').animate({width: '100vw'}, 500, function () {
+                                $('#page-2-country').animate({width: '100vw'}, 500, function () {
+                                    $('#page-2-comment').show('blind', 500);
+                                });
+                            });
+                        });
+                    });
+                }
+                if (index == 4) {
+                    $('#page-3-youth').show(350, function () {
+                        $('#page-3-middle').show(350, function () {
+                            $('#page-3-old').show(350, function () {
+                                $('#page-3-hao').animate({left: '82vw'}, 1000);
+                                $('#page-3-zi').animate({left: '57vw'}, 1000);
+                                $('#page-3-diao').animate({left: '42vw'}, 1000, function () {
+                                    $('#page-3-comment').show('blind', 500);
+                                });
+                            });
+                        });
+                    });
+                }
+                if (index == 5) {
+                    $('#page-4-main-1').show('drop', 500, function () {
+                        $('#page-4-main-2').show('drop', 500, function () {
+                            $('#page-4-phone').attr('class', 'shake-animate');
+                        });
+                    });
+                }
+                if (index == 6) {
+                    var i = 0;
+                    $('.persons').each(function () {
+                        var j = 0;
+                        $(this).children('img').each(function () {
+                            var img = this;
+                            setTimeout(function () {
+                                $(img).fadeIn();
+                            }, j++ * 50)
+                        });
+                        $(this).children('span').each(function () {
+                            var img = this;
+                            setTimeout(function () {
+                                $(img).fadeIn();
+                            }, j++ * 50)
+                        });
+                    });
+                    setTimeout(function () {
+                        $('.person').fadeIn(500);
+                    }, 500);
+                    setTimeout(function () {
+                        $('.person-bar').animate({width: '40vw'}, 500);
+                    }, 1000);
+                    setTimeout(function () {
+                        var k = 0;
+                        $('#page-5-main-2').children('div').each(function () {
+                            var div = this;
+                            setTimeout(function () {
+                                $(div).show('slide', {direction: 'right'}, 500);
+                            }, k++ * 300);
+                        });
+                    }, 1000);
+                }
+                if (index == 7) {
+                    $('#page-6-plane').show('slide', {direction: 'right'}, 500, function () {
+                        $('#page-6-main .bar').show('blind', {}, 500, function () {
+                            $('#page-6-diao').show('slide', {}, 500);
+                            $('#page-6-hao').show('slide', {direction: 'right'}, 500, function () {
+                                $('#page-6-vs').show('scale', {percent: 150}, 200, function () {
+
+                                });
+                            });
+                        });
+                    });
+                }
+                if (index == 8) {
+                    $('#page-7-youth-text').show('scale', 500, function () {
+                        var i = 1;
+                        $('#page-7-youth-dot').children('img').each(function () {
+                            var dot = this;
+                            setTimeout(function () {
+                                $(dot).show('bounce', {}, 500);
+                            }, i++ * 200);
+                        });
+                    });
+                }
+                if (index == 9) {
+                    $('#page-7-middle-text').show('scale', 500, function () {
+                        var i = 1;
+                        $('#page-7-middle-dot').children('img').each(function () {
+                            var dot = this;
+                            setTimeout(function () {
+                                $(dot).show('bounce', {}, 500);
+                            }, i++ * 200);
+                        });
+                    });
+                }
+                if (index == 10) {
+                    $('#page-7-old-text').show('scale', 500, function () {
+                        var i = 1;
+                        $('#page-7-old-dot').children('img').each(function () {
+                            var dot = this;
+                            setTimeout(function () {
+                                $(dot).show('bounce', {}, 500);
+                            }, i++ * 200);
+                        });
+                    });
+                }
+                if (index == 11) {
+                    $('#page-8-youth').show(300, function () {
+                        $('#page-8-middle').show(300, function () {
+                            $('#page-8-old').show(300, function () {
+                                $('#page-8-text').show('clip', {}, 1000);
+                                $('#page-8-chart').children().each(function () {
+                                    $(this).animate({maxHeight: '44vw'}, 1000)
+                                });
+                            })
+                        })
+                    });
+                }
+
+                if (index == 12) {
+                    var i = 0;
+                    $('#page-9-youth div').each(function () {
+                        var j = 0;
+                        i++;
+                        $(this).children().each(function () {
+                            var e = this;
+                            setTimeout(function () {
+                                $(e).show();
+                            }, i * 120 + (j++ * 50));
+                        })
+                    });
+                    setTimeout(function () {
+                        var i = 0;
+                        $('#page-9-middle div').each(function () {
+                            var j = 0;
+                            i++;
+                            $(this).children().each(function () {
+                                var e = this;
+                                setTimeout(function () {
+                                    $(e).show();
+                                }, i * 120 + (j++ * 50));
+                            })
+                        });
+                    }, 500);
+                    setTimeout(function () {
+                        var i = 0;
+                        $('#page-9-old div').each(function () {
+                            var j = 0;
+                            i++;
+                            $(this).children().each(function () {
+                                var e = this;
+                                setTimeout(function () {
+                                    $(e).show();
+                                }, i * 120 + (j++ * 50));
+                            })
+                        });
+                    }, 1000);
+                    setTimeout(function () {
+                        var imgs = $('#page-9-bottom').children();
+                        $(imgs[0]).show('bounce', {direction: 'left'}, 500);
+                        $(imgs[1]).show('bounce', {direction: 'right'}, 500);
+                        $('#page-9-duang').show('puff', {}, 300);
+                    }, 2000)
+                }
+                if (index == 13) {
+                    console.log(123);
+                    var i = 0;
+                    $('.page-10-stage').each(function () {
+                        var j = 0;
+                        i++;
+                        $(this).children('.icon').each(function () {
+                            var e = this;
+                            setTimeout(function () {
+                                $(e).show('bounce', {}, 300);
+                            }, i * 120 + (j++ * 50));
+                        })
+                    });
+                    setTimeout(function () {
+                        $('#page-10-huawei').show('bounce', {direction: 'left'}, 1000);
+                    }, 1000);
+                }
+            }
+        }, 500);
+    }
+</script>
+</body>
+</html>
