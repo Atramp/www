@@ -1,0 +1,35 @@
+.float-button-mul {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    background-color: rgb(244, 67, 54);
+    border-color: rgba(255, 255, 255, 0.843137);
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    border-left-style: none;
+    border-left-width: 0px;
+    border-right-style: none;
+    border-right-width: 0px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-top-style: none;
+    border-top-width: 0px;
+    box-shadow:  0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.843137);
+    cursor: pointer;
+    display: inline-block;
+    font-family: RobotoDraft, Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+    touch-action: manipulation;
+    transition-delay: 0s;
+    transition-duration: 0.28s;
+    transition-property: box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    vertical-align: middle;
+    white-space: nowrap;
+    word-spacing: 0px;
+    -webkit-writing-mode: horizontal-tb;
+}
