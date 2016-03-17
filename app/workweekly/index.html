@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8">
+    <script src="/resources/js/jquery/jquery-1.10.2.min.js"></script>
+    <title></title>
+    <style>
+        div {
+            text-align: center;
+        }
+
+        .list {
+            margin: -2vh 0;
+            padding: 5vh 0;
+            text-align: center;
+        }
+
+        .list div {
+            width: 40vw;
+            display: inline-block;
+        }
+
+        .list div a {
+            text-decoration: none;
+        }
+
+        .list div img {
+            height: 12vh;
+            margin: 1vh 5vw;
+        }
+
+        .list div span {
+            font-family: 黑体, Hiragino Sans GB;
+            font-size: 2vh;
+            line-height: 5vh;
+            display: inline-block;
+        }
+
+        span {
+            color: #000000;
+            list-style-type: none;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".list div").click(function () {
+                var item = this;
+                $(this).css("box-shadow", "0 0");
+                setTimeout(function () {
+                    $(item).css("box-shadow", "1px 1px #999999");
+                    location.href = item.getAttribute("LINK");
+                }, 100);
+                return true;
+            })
+        });
+    </script>
+</head>
+<body style="margin: 0;">
+<div>
+    <di>
+        <img src="img/bg.jpg" style="width: 100vw;">
+    </di>
+    <div  class="list">
+        <div LINK="http://218.206.191.164:8088/app/workweekly/workweekly-v1.0.apk">
+            <img src="img/btn-Android.png">
+            <span>Android下载</span>
+        </div>
+        <div LINK="itms-services://?action=download-manifest&url=https://dn-tdcmcc.qbox.me/weekly.plist">
+            <img src="img/btn-ios.png">
+            <span>iPhone下载</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

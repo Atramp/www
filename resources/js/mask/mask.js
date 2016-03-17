@@ -2,6 +2,7 @@
  * Created by alex on 14-10-15.
  */
 
+<!--loading遮蔽层-->
 var spinner;
 
 function showMask() {
@@ -41,3 +42,26 @@ function hideMask() {
         document.body.removeChild(document.getElementById("spin"));
     spinner.stop();
 }
+<!--loading遮蔽层 end-->
+
+<!--半透明遮蔽层-->
+var Mask = function (parent) {
+    this.count = 0;
+    this._body = parent;
+}
+
+Mask.prototype.show = function () {
+    var _mask = $('<div id="mask" style="width: 100%;z-index: 9;opacity: 0.4;position: absolute;top: 0;left:0;background-color: #cccccc"></div>');
+    if (this.count == 0) {
+        $(_mask).css('height', window.outerHeight * 5);
+        $(this._body).append(_mask);
+    }
+    this.count++;
+};
+Mask.prototype.hide = function () {
+    if (--this.count <= 0) {
+        this.count = 0;
+        $('#mask').remove();
+    }
+};
+<!--半透明遮蔽层 end-->
